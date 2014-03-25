@@ -34,10 +34,19 @@ Rscript knit_html.R  &> output.txt
 
 # it rebuilds
 #  figure/unnamed-chunk-3.png
+#  figure/unnamed-chunk-4.png
 #  reproducing-bicycle-helmet-research.html
 #  reproducing-bicycle-helmet-research.md
+#  benefits-of-reproducible-research.html
+#  benefits-of-reproducible-research.md
 
-for filename in output.txt reproducing-bicycle-helmet-research.html reproducing-bicycle-helmet-research.md figure/unnamed-chunk-3.png; do
+for filename in output.txt \
+    reproducing-bicycle-helmet-research.html \
+    reproducing-bicycle-helmet-research.md \
+    benefits-of-reproducible-research.html \
+    benefits-of-reproducible-research.md \
+    figure/unnamed-chunk-3.png \
+    figure/unamed-chunk-5.png; do
     if [ -f $filename ]; then
         cp $filename compendiaoutput/
     fi
