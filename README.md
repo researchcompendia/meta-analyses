@@ -3,4 +3,9 @@ meta-analyses
 
 Data and program code for meta-analyses of population health and health services research questions, as a contribution to reproducible research in these fields.
 
-All files are copyright Tim Churches, but are available at no cost for use by others under the terms of the Creative Commons Attribution-ShareAlike 3.0 Australia license (see http://creativecommons.org/licenses/by-sa/3.0/au/ ).
+All files from https://github.com/timchurches/meta-analyses are copyright Tim Churches, but are available at no cost for use by others under the terms of the Creative Commons Attribution-ShareAlike 3.0 Australia license (see http://creativecommons.org/licenses/by-sa/3.0/au/ ).
+
+meta-analyses fork
+==================
+
+All files add in this fork are available under the MIT License as shown in their headers.
