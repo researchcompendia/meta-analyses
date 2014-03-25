@@ -8,4 +8,4 @@ All files from https://github.com/timchurches/meta-analyses are copyright Tim Ch
 meta-analyses fork
 ==================
 
-All files add in this fork are available under the MIT License as shown in their headers.
+All files added in this fork are available under the MIT License as shown in their headers.
