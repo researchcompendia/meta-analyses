@@ -22,5 +22,13 @@
 
 require(knitr)
 require(markdown)
-knit('reproducing-bicycle-helmet-research.Rmd', 'reproducing-bicycle-helmet-research.md')
-markdownToHTML('reproducing-bicycle-helmet-research.md','reproducing-bicycle-helmet-research.html')
+
+# hack! no error checking! bazillions assumptions! use at own risk! sorry!
+knit_html <- function(rmd_filename) {
+    md_filename <- knit(rmd_filename)
+    filebase <- strsplit(md_filename, '[.]')[[1]][[1]]
+    markdownToHTML(md_filename, paste(filebase, 'html', sep='.' ))
+}
+
+knit_html('reproducing-bicycle-helmet-research.Rmd')
+knit_html('benefits-of-reproducible-research.Rmd')
