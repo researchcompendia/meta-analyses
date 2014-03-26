@@ -1,53 +1,111 @@
-#!/usr/bin/env bash
-#
-#The MIT License (MIT)
-#
-#Copyright (c) 2014 Research Compendia
-#
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
-#
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
-#
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+The MIT License (MIT)
+
+Copyright (c) 2014 Research Compendia
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+import argparse
+import csv
+import json
+from os.path import abspath, curdir, isfile, join
+import subprocess
 
 
-# This script calls the author's R script with no ability to change parameters at this time.
+def main(args):
+    outputdir = join(abspath(curdir), 'compendiaoutput')
+    subprocess.call(['mkdir', '-p', outputdir])
 
-set -e
+    if args.parameters:
+        assert isfile(args.parameters), 'parameters are not in a valid file'
+        dump_parameters_to_csv(args.parameters)
+        subprocess.call(['cp', args.parameters, 'compendiaoutput/'])
 
-mkdir -p compendiaoutput
+    with open(join(outputdir, 'output.txt'), 'w') as outputfile:
+        subprocess.call(['Rscript', 'knit_html.R'], stdout=outputfile, stderr=subprocess.STDOUT)
+        # kit_html.R rebuilds these files
+        targetfiles = [subprocess.call(['cp', f, 'compendiaoutput/']) for f in [
+            'figure/unnamed-chunk-3.png',
+            'figure/unnamed-chunk-4.png',
+            'reproducing-bicycle-helmet-research.html',
+            'reproducing-bicycle-helmet-research.md',
+            'benefits-of-reproducible-research.html',
+            'benefits-of-reproducible-research.md',] if isfile(f)]
 
-# This behaves like "Knit HTML" in RStudio
-Rscript knit_html.R  &> output.txt
 
-# it rebuilds
-#  figure/unnamed-chunk-3.png
-#  figure/unnamed-chunk-4.png
-#  reproducing-bicycle-helmet-research.html
-#  reproducing-bicycle-helmet-research.md
-#  benefits-of-reproducible-research.html
-#  benefits-of-reproducible-research.md
+def dump_parameters_to_csv(parameters_file):
+    with open(parameters_file) as fh:
+        parameters = json.load(fh)
+        assert 'resources' in parameters, "missing 'resources' value from parameters."
+        json2csv(parameters)
 
-for filename in output.txt \
-    reproducing-bicycle-helmet-research.html \
-    reproducing-bicycle-helmet-research.md \
-    benefits-of-reproducible-research.html \
-    benefits-of-reproducible-research.md \
-    figure/unnamed-chunk-3.png \
-    figure/unamed-chunk-5.png; do
-    if [ -f $filename ]; then
-        cp $filename compendiaoutput/
-    fi
-done
+
+def json2csv(jsonstr):
+    """ seralize json to csv file(s)
+    NO VALIDATION!!!!!!!!!!!!!!1
+
+    json should be of this form
+    {"resources": [{"path": "filename", "fieldnames": [list of fieldnames] "rows": [list of list per row ]}]}
+
+    """
+    dataset = json.loads(jsonstr)
+    resources = dataset.get('resources', [])
+    for resource in resources:
+        if 'path' not in resource:
+            continue
+        if 'rows' not in resource:
+            continue
+        path = resource.get('path')
+        with open(path, 'wb') as fh:
+            writer = csv.writer(fh)
+            rows = resource.get('rows')
+            fieldnames = resource.get('fieldnames')
+            writer.writerow(fieldnames)
+            writer.writerows(rows)
+
+
+def build_parser():
+    parser = argparse.ArgumentParser(description="""
+    This script calls builds the author's documents with a limited ability to change parameters.
+    
+    By default, this runs the author's code against a json representation of the csv files provided by
+    the author.
+
+    To pass different values for the csv files, a json file with the following format can be passed.
+    {"resources": [{"path": "filename", "fieldnames": [list of fieldnames] "rows": [list of list per row ]}]}
+
+    The author's code expects these filenames. Any other filenames will be ignored.
+
+    Attewell_et_al_and_Elvik.csv
+    Elvik_Hansen_Amoros_ORs.csv
+    Elvik-meta-analysis-corrigendum-table4-results.csv
+
+
+    """)
+    parser.add_argument('parameters', nargs='?')
+    return parser
+
+
+if __name__ == "__main__":
+    parser = build_parser()
+    args = parser.parse_args()
+    main(args)
