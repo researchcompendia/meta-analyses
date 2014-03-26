@@ -46,6 +46,7 @@ def main(args):
         targetfiles = [subprocess.call(['cp', f, 'compendiaoutput/']) for f in [
             'figure/unnamed-chunk-3.png',
             'figure/unnamed-chunk-4.png',
+            'figure/unnamed-chunk-5.png',
             'reproducing-bicycle-helmet-research.html',
             'reproducing-bicycle-helmet-research.md',
             'benefits-of-reproducible-research.html',
@@ -56,19 +57,18 @@ def dump_parameters_to_csv(parameters_file):
     with open(parameters_file) as fh:
         parameters = json.load(fh)
         assert 'resources' in parameters, "missing 'resources' value from parameters."
-        json2csv(parameters)
+        dict2csv(parameters)
 
 
-def json2csv(jsonstr):
+def dict2csv(csv_dictdata):
     """ seralize json to csv file(s)
     NO VALIDATION!!!!!!!!!!!!!!1
 
-    json should be of this form
+    dict should be of this form
     {"resources": [{"path": "filename", "fieldnames": [list of fieldnames] "rows": [list of list per row ]}]}
 
     """
-    dataset = json.loads(jsonstr)
-    resources = dataset.get('resources', [])
+    resources = csv_dictdata.get('resources', [])
     for resource in resources:
         if 'path' not in resource:
             continue
