@@ -1,0 +1,49 @@
+{
+  "name": "benefits-of-reproducible-research-dataset",
+  "resources": [
+    { "path": "Attewell_et_al_and_Elvik.csv",
+      "schema": {
+        "fields": [
+          { "name": "injury.type", "type": "string" },
+          { "name": "meta.analysis", "type": "string" },
+          { "name": "study.label", "type": "string" },
+          { "name": "year", "type": "integer" },
+          { "name": "cases.helmet", "type": "integer" },
+          { "name": "cases.no.helmet", "type": "integer" },
+          { "name": "controls.helmet", "type": "integer" },
+          { "name": "controls.no.helmet", "type": "integer" }
+        ]
+      }
+    },
+    { "path": "Elvik-meta-analysis-corrigendum-table4-results.csv",
+      "schema": {
+        "fields": [ 
+          { "name": "source", "type": "string" },
+          { "name": "injury.type", "type": "string" },
+          { "name": "studies.included", "type": "string" },
+          { "name": "num.studies", "type": "integer" },
+          { "name": "FE.OR", "type": "number" },
+          { "name": "FE.LL95", "type": "number" },
+          { "name": "FE.UL95", "type": "number" },
+          { "name": "RE.OR", "type": "number" },
+          { "name": "RE.LL95", "type": "number" },
+          { "name": "RE.UL95", "type": "number" }
+        ]
+      }
+    },
+
+    { "path": "Elvik_Hansen_Amoros_ORs.csv",
+      "schema": {
+        "fields": [
+          { "name": "injury.type", "type": "string" },
+          { "name": "meta.analysis", "type": "string" },
+          { "name": "study.label", "type": "string" },
+          { "name": "year", "type": "integer" },
+          { "name": "OR", "type": "number" },
+          { "name": "LL95", "type": "number" },
+          { "name": "UL95", "type": "number" }
+        ]
+      }
+    }
+  ]
+}
