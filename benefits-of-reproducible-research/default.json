@@ -1,1 +1,82 @@
-{"resources": [{"path": "Attewell_et_al_and_Elvik.csv", "rows": [["head", "A", "Dorsch et al 87", "1987", "62", "61", "60", "14"], ["head", "A", "Wasserman et al 88", "1988", "0.344", "7.656", "8.344", "6.656"], ["head", "A", "Thompson et al 89", "1989", "17", "218", "103", "330"], ["head", "A", "Wasserman & Buccini 90", "1990", "1", "9", "108", "73"], ["head", "A", "Spaite et al 91", "1991", "1", "37", "115", "131"], ["head", "A", "McDermott et al 93", "1993", "90", "468", "276", "876"], ["head", "A", "Maimaris et al 94", "1994", "4", "100", "110", "828"], ["head", "A", "Thomas et al 94", "1994", "31", "67", "126", "140"], ["head", "A", "Finvers et al 96", "1996", "4", "72", "92", "531"], ["head", "A", "Thompson Rivara et al 96", "1996", "222", "535", "1496", "1137"], ["head", "A", "Jacobson et al 98", "1998", "18", "38", "97", "76"], ["head", "A", "Linn et al 98", "1998", "101", "467", "226", "668"], ["head", "A", "Shafi et al 98", "1998", "21", "107", "10", "70"], ["head", "E", "Heng et al 06", "2006", "1", "57", "16", "86"], ["head", "E", "Hausotter 00", "2000", "12", "1515", "24", "1681"], ["brain", "A", "Dorsch et al 87", "1987", "36", "34", "86", "41"], ["brain", "A", "Wasserman et al 88", "1988", "0.244", "3.756", "8.244", "10.756"], ["brain", "A", "Thompson et al 89", "1989", "4", "95", "103", "330"], ["brain", "A", "Wasserman & Buccini 90", "1990", "32", "34", "77", "48"], ["brain", "A", "Thomas et al 94", "1994", "8", "31", "126", "140"], ["brain", "A", "Thompson Rivara et al 96", "1996", "62", "141", "1496", "1137"], ["brain", "A", "Linn et al 98", "1998", "5", "57", "322", "1078"], ["brain", "A", "Shafi et al 98", "1998", "21", "96", "10", "81"], ["face", "A", "Dorsch et al 87", "1987", "1", "7", "121", "68"], ["face", "A", "Thomson et al 90", "1990", "30", "182", "83", "236"], ["face", "A", "Wasserman & Buccini 90", "1990", "2", "3", "107", "79"], ["face", "A", "McDermott et al 93", "1993", "94", "464", "272", "880"], ["face", "A", "Maimaris et al 94", "1994", "22", "212", "92", "716"], ["face", "A", "Thompson Nunn et al 96", "1996", "73", "133", "1133", "846"], ["face", "A", "Thompson Nunn et al 96", "1996", "52", "89", "1133", "846"], ["face", "A", "Thompson Nunn et al 96", "1996", "297", "264", "1133", "846"], ["face", "C", "Hansen et al 03", "2003", "110", "172", "180", "529"], ["neck", "A", "Wasserman & Buccini 90", "1990", "14", "6", "95", "76"], ["neck", "A", "McDermott et al 93", "1993", "21", "44", "345", "1300"], ["neck", "A", "Rivara et al 97", "1997", "48", "43", "1666", "1627"], ["fatal", "A", "Thompson et al 89", "1989", "0", "3", "120", "545"], ["fatal", "A", "Spaite et al 91", "1991", "1", "10", "115", "158"], ["fatal", "A", "McDermott et al 93", "1993", "2", "12", "364", "1332"], ["fatal", "A", "Maimaris et al 94", "1994", "0.028", "2.972", "114.028", "926.972"], ["fatal", "A", "Rivara et al 97", "1997", "1", "13", "1717", "1659"], ["fatal", "A", "Shafi et al 98", "1998", "0.04", "3.96", "31.04", "174.96"]], "fieldnames": ["injury.type", "meta.analysis", "study.label", " year", " cases.helmet", " cases.no.helmet", " controls.helmet", "controls.no.helmet"]}, {"path": "Elvik_Hansen_Amoros_ORs.csv", "rows": [["head", "E", "Hansen_a 03", "2003", "0.68", "0.41", "1.11"], ["head", "E", "Hansen_b 03", "2003", "0.43", "0.28", "0.66"], ["head", "E", "Amoros 09", "2009", "0.79", "0.67", "0.93"], ["face", "E", "Hansen_a 03", "2003", "1.98", "1.26", "3.2"], ["face", "E", "Hansen_b 03", "2003", "1.20", "0.83", "1.74"], ["face", "E", "Amoros 09", "2009", "0.80", "0.67", "0.95"], ["neck", "E", "Amoros 09", "2009", "1.24", "0.98", "1.58"]], "fieldnames": ["injury.type", "meta.analysis", "study.label", "year", "OR", "LL95", "UL95"]}, {"path": "Elvik-meta-analysis-corrigendum-table4-results.csv", "rows": [["Elvik", "head", "old", "13", "0.42", "0.37", "0.47", "0.38", "0.28", "0.53"], ["Elvik", "head", "new", "5", "0.71", "0.62", "0.82", "0.58", "0.41", "0.84"], ["Elvik", "head", "all", "18", "0.51", "0.47", "0.56", "0.46", "0.36", "0.58"], ["Elvik", "face", "old", "8", "0.63", "0.56", "0.71", "0.56", "0.42", "0.74"], ["Elvik", "face", "new", "3", "0.94", "0.81", "1.09", "1.20", "0.72", "2.00"], ["Elvik", "face", "all", "11", "0.74", "0.67", "0.81", "0.67", "0.52", "0.86"], ["Elvik", "neck", "old", "3", "1.36", "1.00", "1.86", "1.40", "0.97", "2.02"], ["Elvik", "neck", "new", "1", "1.24", "0.98", "1.57", "1.24", "0.98", "1.57"], ["Elvik", "neck", "all", "4", "1.28", "1.06", "1.55", "1.29", "1.05", "1.57"], ["Elvik", "head/face/neck", "old", "24", "0.54", "0.50", "0.59", "0.62", "0.52", "0.75"], ["Elvik", "head/face/neck", "new", "9", "0.87", "0.79", "0.95", "1.02", "0.84", "1.22"], ["Elvik", "head/face/neck", "all", "33", "0.66", "0.62", "0.70", "0.79", "0.69", "0.90"]], "fieldnames": ["source", "injury.type", "studies.included", "num.studies", "FE.OR", "FE.LL95", "FE.UL95", "RE.OR", "RE.LL95", "RE.UL95"]}]}
+{
+    "resources": [
+        {
+            "fieldnames": [ "injury.type", "meta.analysis", "study.label", " year", " cases.helmet", " cases.no.helmet", " controls.helmet", "controls.no.helmet" ],
+            "path": "Attewell_et_al_and_Elvik.csv",
+            "rows": [
+                [ "head", "A", "Dorsch et al 87", "1987", "62", "61", "60", "14" ],
+                [ "head", "A", "Wasserman et al 88", "1988", "0.344", "7.656", "8.344", "6.656" ],
+                [ "head", "A", "Thompson et al 89", "1989", "17", "218", "103", "330" ],
+                [ "head", "A", "Wasserman & Buccini 90", "1990", "1", "9", "108", "73" ],
+                [ "head", "A", "Spaite et al 91", "1991", "1", "37", "115", "131" ],
+                [ "head", "A", "McDermott et al 93", "1993", "90", "468", "276", "876" ],
+                [ "head", "A", "Maimaris et al 94", "1994", "4", "100", "110", "828" ],
+                [ "head", "A", "Thomas et al 94", "1994", "31", "67", "126", "140" ],
+                [ "head", "A", "Finvers et al 96", "1996", "4", "72", "92", "531" ],
+                [ "head", "A", "Thompson Rivara et al 96", "1996", "222", "535", "1496", "1137" ],
+                [ "head", "A", "Jacobson et al 98", "1998", "18", "38", "97", "76" ],
+                [ "head", "A", "Linn et al 98", "1998", "101", "467", "226", "668" ],
+                [ "head", "A", "Shafi et al 98", "1998", "21", "107", "10", "70" ],
+                [ "head", "E", "Heng et al 06", "2006", "1", "57", "16", "86" ],
+                [ "head", "E", "Hausotter 00", "2000", "12", "1515", "24", "1681" ],
+                [ "brain", "A", "Dorsch et al 87", "1987", "36", "34", "86", "41" ],
+                [ "brain", "A", "Wasserman et al 88", "1988", "0.244", "3.756", "8.244", "10.756" ],
+                [ "brain", "A", "Thompson et al 89", "1989", "4", "95", "103", "330" ],
+                [ "brain", "A", "Wasserman & Buccini 90", "1990", "32", "34", "77", "48" ],
+                [ "brain", "A", "Thomas et al 94", "1994", "8", "31", "126", "140" ],
+                [ "brain", "A", "Thompson Rivara et al 96", "1996", "62", "141", "1496", "1137" ],
+                [ "brain", "A", "Linn et al 98", "1998", "5", "57", "322", "1078" ],
+                [ "brain", "A", "Shafi et al 98", "1998", "21", "96", "10", "81" ],
+                [ "face", "A", "Dorsch et al 87", "1987", "1", "7", "121", "68" ],
+                [ "face", "A", "Thomson et al 90", "1990", "30", "182", "83", "236" ],
+                [ "face", "A", "Wasserman & Buccini 90", "1990", "2", "3", "107", "79" ],
+                [ "face", "A", "McDermott et al 93", "1993", "94", "464", "272", "880" ],
+                [ "face", "A", "Maimaris et al 94", "1994", "22", "212", "92", "716" ],
+                [ "face", "A", "Thompson Nunn et al 96", "1996", "73", "133", "1133", "846" ],
+                [ "face", "A", "Thompson Nunn et al 96", "1996", "52", "89", "1133", "846" ],
+                [ "face", "A", "Thompson Nunn et al 96", "1996", "297", "264", "1133", "846" ],
+                [ "face", "C", "Hansen et al 03", "2003", "110", "172", "180", "529" ],
+                [ "neck", "A", "Wasserman & Buccini 90", "1990", "14", "6", "95", "76" ],
+                [ "neck", "A", "McDermott et al 93", "1993", "21", "44", "345", "1300" ],
+                [ "neck", "A", "Rivara et al 97", "1997", "48", "43", "1666", "1627" ],
+                [ "fatal", "A", "Thompson et al 89", "1989", "0", "3", "120", "545" ],
+                [ "fatal", "A", "Spaite et al 91", "1991", "1", "10", "115", "158" ],
+                [ "fatal", "A", "McDermott et al 93", "1993", "2", "12", "364", "1332" ],
+                [ "fatal", "A", "Maimaris et al 94", "1994", "0.028", "2.972", "114.028", "926.972" ],
+                [ "fatal", "A", "Rivara et al 97", "1997", "1", "13", "1717", "1659" ],
+                [ "fatal", "A", "Shafi et al 98", "1998", "0.04", "3.96", "31.04", "174.96" ]
+            ]
+        },
+        {
+            "fieldnames": [ "injury.type", "meta.analysis", "study.label", "year", "OR", "LL95", "UL95" ],
+            "path": "Elvik_Hansen_Amoros_ORs.csv",
+            "rows": [
+                [ "head", "E", "Hansen_a 03", "2003", "0.68", "0.41", "1.11" ],
+                [ "head", "E", "Hansen_b 03", "2003", "0.43", "0.28", "0.66" ],
+                [ "head", "E", "Amoros 09", "2009", "0.79", "0.67", "0.93" ],
+                [ "face", "E", "Hansen_a 03", "2003", "1.98", "1.26", "3.2" ],
+                [ "face", "E", "Hansen_b 03", "2003", "1.20", "0.83", "1.74" ],
+                [ "face", "E", "Amoros 09", "2009", "0.80", "0.67", "0.95" ],
+                [ "neck", "E", "Amoros 09", "2009", "1.24", "0.98", "1.58" ]
+            ]
+        },
+        {
+            "fieldnames": [ "source", "injury.type", "studies.included", "num.studies", "FE.OR", "FE.LL95", "FE.UL95", "RE.OR", "RE.LL95", "RE.UL95" ],
+            "path": "Elvik-meta-analysis-corrigendum-table4-results.csv",
+            "rows": [
+                [ "Elvik", "head", "old", "13", "0.42", "0.37", "0.47", "0.38", "0.28", "0.53" ],
+                [ "Elvik", "head", "new", "5", "0.71", "0.62", "0.82", "0.58", "0.41", "0.84" ],
+                [ "Elvik", "head", "all", "18", "0.51", "0.47", "0.56", "0.46", "0.36", "0.58" ],
+                [ "Elvik", "face", "old", "8", "0.63", "0.56", "0.71", "0.56", "0.42", "0.74" ],
+                [ "Elvik", "face", "new", "3", "0.94", "0.81", "1.09", "1.20", "0.72", "2.00" ],
+                [ "Elvik", "face", "all", "11", "0.74", "0.67", "0.81", "0.67", "0.52", "0.86" ],
+                [ "Elvik", "neck", "old", "3", "1.36", "1.00", "1.86", "1.40", "0.97", "2.02" ],
+                [ "Elvik", "neck", "new", "1", "1.24", "0.98", "1.57", "1.24", "0.98", "1.57" ],
+                [ "Elvik", "neck", "all", "4", "1.28", "1.06", "1.55", "1.29", "1.05", "1.57" ],
+                [ "Elvik", "head/face/neck", "old", "24", "0.54", "0.50", "0.59", "0.62", "0.52", "0.75" ],
+                [ "Elvik", "head/face/neck", "new", "9", "0.87", "0.79", "0.95", "1.02", "0.84", "1.22" ],
+                [ "Elvik", "head/face/neck", "all", "33", "0.66", "0.62", "0.70", "0.79", "0.69", "0.90" ]
+            ]
+        }
+    ]
+}
